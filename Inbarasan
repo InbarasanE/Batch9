@@ -1,0 +1,17 @@
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+import torch
+import pandas as pd
+import os
+import requests
+
+from kaggle_secrets import UserSecretsClient
+from google import genai
+from google.genai import types
+
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain.chains import RetrievalQA
+from langchain.prompts import PromptTemplate
+from langchain_huggingface import HuggingFacePipeline
+from langchain.schema.runnable import Runnable
+from typing import Dict, Any
